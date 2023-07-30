@@ -1,36 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
-// import { addNewContactAsync } from 'redux/contactsSlice';
 import { addContact } from 'redux/contacts/operations';
 
 import styles from './ContactForm.module.css';
 
 const ContactForm = () => {
-  // const [name, setName] = useState('');
-  // const [number, setNumber] = useState('');
-
-  // const dispatch = useDispatch();
-
-  // const handleChange = ev => {
-  //   const { name, value } = ev.target;
-  //   if (name === 'name') {
-  //     setName(value);
-  //   } else if (name === 'number') {
-  //     setNumber(value);
-  //   }
-  // };
-
-  // const handleSubmit = ev => {
-  //   ev.preventDefault();
-  //   const newContact = {
-  //     name,
-  //     number,
-  //   };
-  //   dispatch(addContact(newContact));
-  //   setName('');
-  //   setNumber('');
-  // };
-
   const dispatch = useDispatch();
 
   const handleSubmit = ev => {
