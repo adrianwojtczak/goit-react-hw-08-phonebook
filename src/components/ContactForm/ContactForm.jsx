@@ -1,33 +1,53 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addNewContactAsync } from 'redux/contactsSlice';
+// import { addNewContactAsync } from 'redux/contactsSlice';
+import { addContact } from 'redux/contacts/operations';
 
 import styles from './ContactForm.module.css';
 
 const ContactForm = () => {
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  // const [name, setName] = useState('');
+  // const [number, setNumber] = useState('');
+
+  // const dispatch = useDispatch();
+
+  // const handleChange = ev => {
+  //   const { name, value } = ev.target;
+  //   if (name === 'name') {
+  //     setName(value);
+  //   } else if (name === 'number') {
+  //     setNumber(value);
+  //   }
+  // };
+
+  // const handleSubmit = ev => {
+  //   ev.preventDefault();
+  //   const newContact = {
+  //     name,
+  //     number,
+  //   };
+  //   dispatch(addContact(newContact));
+  //   setName('');
+  //   setNumber('');
+  // };
 
   const dispatch = useDispatch();
 
-  const handleChange = ev => {
-    const { name, value } = ev.target;
-    if (name === 'name') {
-      setName(value);
-    } else if (name === 'phone') {
-      setPhone(value);
-    }
-  };
-
   const handleSubmit = ev => {
     ev.preventDefault();
-    const newContact = {
+
+    const form = ev.target;
+    const name = form.elements.name.value;
+    const number = form.elements.number.value;
+
+    const contact = {
       name,
-      phone,
+      number,
     };
-    dispatch(addNewContactAsync(newContact));
-    setName('');
-    setPhone('');
+
+    dispatch(addContact(contact));
+
+    form.reset();
   };
 
   return (
@@ -37,8 +57,8 @@ const ContactForm = () => {
         <input
           type="text"
           name="name"
-          value={name}
-          onChange={handleChange}
+          // value={name}
+          // onChange={handleChange}
           className={styles.input}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
@@ -49,9 +69,9 @@ const ContactForm = () => {
         Number
         <input
           type="tel"
-          name="phone"
-          value={phone}
-          onChange={handleChange}
+          name="number"
+          // value={number}
+          // onChange={handleChange}
           className={styles.input}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
