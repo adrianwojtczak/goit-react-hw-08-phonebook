@@ -6,17 +6,6 @@ import { useAuth } from 'hooks';
 
 import styles from './AppBar.module.css';
 
-// const AppBar = () => {
-//   const { isLoggedIn } = useAuth();
-
-//   return (
-//     <header className={css.header}>
-//       <Navigation />
-//       {isLoggedIn ? <UserMenu /> : <AuthNav />}
-//     </header>
-//   );
-// };
-
 const AppBar = () => {
   const { isLoggedIn } = useAuth();
   return (

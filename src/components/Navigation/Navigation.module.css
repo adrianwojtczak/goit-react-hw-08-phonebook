@@ -9,3 +9,14 @@
 .link.active {
   color: #e84a5f;
 }
+
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 480px) {
+  .nav {
+    flex-direction: column;
+  }
+}

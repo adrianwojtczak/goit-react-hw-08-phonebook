@@ -7,7 +7,7 @@ const Navigation = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <nav>
+    <nav className={styles.nav}>
       <NavLink className={styles.link} to="/">
         Home
       </NavLink>

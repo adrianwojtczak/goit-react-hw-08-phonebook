@@ -2,8 +2,16 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .username {
   font-weight: 700;
+  width: min-content;
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    flex-direction: column;
+  }
 }

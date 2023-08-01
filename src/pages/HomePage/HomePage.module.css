@@ -1,12 +1,25 @@
 .container {
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 150px);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../../images/bg.jpg);
+  padding-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .title {
   font-weight: 500;
   font-size: 48px;
   text-align: center;
+  margin-top: 10px;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
 }

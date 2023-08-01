@@ -1,0 +1,9 @@
+.wrapper {
+  padding: 50px;
+  width: fit-content;
+  background-image: url(../../images/bg.jpg);
+  border: none;
+  border-radius: 4px;
+  max-width: 900px;
+  margin: 0 auto;
+}

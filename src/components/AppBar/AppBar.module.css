@@ -3,5 +3,21 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
-  border-bottom: 1px solid #2a363b;
+  background-image: url(../../images/header.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  max-width: 1200px;
+  padding: 20px 100px;
+}
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 20px 50px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    padding: 20px 15px;
+  }
 }
